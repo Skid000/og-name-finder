@@ -3,7 +3,7 @@ var {
 } = require('worker_threads'), wordlist = require('wordlist-english')['english'], arguments = process.argv.slice(2), fs = require('fs'), workload;
 if (arguments.length != 3 || isNaN(parseInt(arguments[0])) || isNaN(parseInt(arguments[1]))) console.log(`
 Proper use of this command is as followed
-node index.js name-length threads output
+node index.js <name length> <threads> <output file name>
 `), process.exit(1);
 path = `./resources/remaining${arguments[0]}.json`;
 arguments[0] = parseInt(arguments[0]);
