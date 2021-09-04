@@ -12,6 +12,7 @@ req = async (e) => {
     return;
 }
 async function search(min,max,path,id,output){
+    fs.writeFileSync('debugStart.txt',parseInt(fs.readFileSync('debugStart.txt','utf-8')) + 1);
     fs.writeFileSync(output,"");
     console.log(`Worker ${id} Starting!`)
     var words = JSON.parse(fs.readFileSync(path,'utf-8'));
@@ -21,4 +22,5 @@ async function search(min,max,path,id,output){
     var lol = fs.readFileSync(output,'utf-8')
     fs.writeFileSync(output,`${lol}${results}`);
     console.log(`Worker ${id} Finished!`)
+    fs.writeFileSync('debugEnd.txt',parseInt(fs.readFileSync('debugEnd.txt','utf-8')) + 1);
 }

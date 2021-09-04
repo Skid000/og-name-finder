@@ -6,6 +6,8 @@ Proper use of this command is as followed
 node index.js <name length> <threads> <output file name>
 `), process.exit(1);
 path = `./resources/remaining${arguments[0]}.json`;
+fs.writeFileSync('debugStart.txt',"0");
+fs.writeFileSync('debugEnd.txt',"0")
 arguments[0] = parseInt(arguments[0]);
 arguments[1] = parseInt(arguments[1]);
 if (arguments[0] < 4 || arguments[0] > 16) console.log("Num not in range defaulting to 4"), arguments[0] = 4;
